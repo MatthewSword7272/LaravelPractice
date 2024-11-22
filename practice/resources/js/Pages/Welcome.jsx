@@ -3,6 +3,8 @@ import Leaderboard from "@/Components/Leaderboard";
 import AppLayout from "@/Layouts/AppLayout";
 import { Head, Link } from "@inertiajs/react";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function Welcome({}) {
     var settings = {
@@ -67,16 +69,24 @@ export default function Welcome({}) {
                     </div>
                 </div>
             </div>
-            <div className="mt-24 flex items-center flex-col overflow-hidden">
+            <div className="w-full text-center">
                 <Slider {...settings}>
                     {leagues.map((league) =>
                         league.divisions.map((division) => (
-                            <Leaderboard
-                                league={league}
-                                divisionID={division.id}
-                            />
+                            <div>
+                                <Leaderboard
+                                    leagueName={league.leagueName}
+                                    divisionName={division.divisionName}
+                                    divisionID={division.id}
+                                />
+                            </div>
                         ))
                     )}
+                    {/* <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div> */}
                 </Slider>
             </div>
         </AppLayout>
