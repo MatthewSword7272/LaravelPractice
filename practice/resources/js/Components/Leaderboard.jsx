@@ -97,7 +97,7 @@ export default function Leaderboard({ divisionID, leagueName, divisionName }) {
             <h2>{leagueName}</h2>
             <div className="flex flex-row w-full items-baseline gap-x-4">
                 <h2 className="whitespace-nowrap">{divisionName}</h2>
-                <div className="flex bg-black w-full h-0.5" />
+                <div className="flex bg-black w-full h-0.5" /> {/* Line */}
             </div>
             <div className="w-full">
                 <div className="flex text-black font-extrabold px-4">
